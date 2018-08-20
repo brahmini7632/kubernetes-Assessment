@@ -1,0 +1,17 @@
+---
+
+# Play to ensure that public key is there on managed hosts. Don't forget to execute it with --ask-pass
+- name: Public key is deployed to managed hosts for Ansible
+  hosts: all
+  remote_user: brahmin
+#  become: yes
+
+  tasks:
+
+    - name: Ensure key is in root's #~/.ssh/authorized_hosts
+      authorized_key:
+        user: brahmini
+        state: present
+        key: "{{ lookup('file', '/home/brahmini/.ssh/id_rsa.pub') }}"
+        #with_file:
+        #   - "/home/brahmini/.ssh/id_rsa.pub"
