@@ -15,3 +15,4 @@
         key: "{{ lookup('file', '/home/brahmini/.ssh/id_rsa.pub') }}"
         #with_file:
         #   - "/home/brahmini/.ssh/id_rsa.pub"
+adfh
